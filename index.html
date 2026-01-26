@@ -19,6 +19,85 @@
       --shadow: 0 8px 24px rgba(15,23,42,.06);
     }
 
+    /* two-column row */
+/* make image column smaller than text */
+.split.cred{
+  grid-template-columns: 0.95fr 1.05fr; /* tweak: 0.9/1.1 if you want smaller */
+  align-items: center;
+}
+
+.credrow{
+  display:grid;
+  grid-template-columns: 480px 1fr; /* was bigger—drop to 480/460 */
+  gap: 32px;
+  align-items:center;
+  margin: 26px 0;
+}
+@media (max-width: 900px){
+  .credrow{ grid-template-columns: 1fr; }
+}
+
+.credrow .card{ max-width: 560px; }
+
+/* hard cap so it never gets huge on wide screens */
+.split.cred .certbox{
+  max-width: 400px;   /* lower this to shrink (e.g. 520px) */
+}
+
+/* keep the image responsive inside the cap */
+.split.cred .certimg{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* image card */
+.certbox{
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.certimg{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* optional: keep your zoom for Reiki */
+.certbox--reiki .certimg{
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+/* mobile: stack nicely */
+@media (max-width: 860px){
+  .split.cred{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* image card should have zero padding + clip overflow */
+.certbox{
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* ensure image truly fills the box */
+.certbox .certimg{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* zoom Reiki slightly to remove side whitespace */
+.certbox--reiki .certimg{
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -252,7 +331,30 @@
 <a class="btn" href="https://calendly.com/theesotericnomad/beyond-quantum-healing-hypnosis-session">Book BQH Session</a>
 </div>
 </div>
-</section><section id="testimonials"><h2>Testimonials</h2><div class="gallery"><div class="thumb"><img alt="Client feedback screenshot" src="assets/review1.png"/><div class="caption">“Man I really feel better now!”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review2.png"/><div class="caption">"I'm fascinated by this as I feel so good."</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review3.png"/><div class="caption">“I feel better after the session.”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review4.png"/><div class="caption">“I feel so much better... I thought he was the one. But I'm feeling like I could move on now.”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review5.png"/><div class="caption">"So far my mood is boosted and I did well on my two college exams."</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review6.png"/><div class="caption">“You definitely have a gift.”</div></div></div></section><section id="credentials"><h2>Credentials</h2><div class="split"><div class="card"><h3>BQH Accreditation</h3><p class="meta">Beyond Quantum Healing (BQH) — Certificate of Completion</p></div><div><img alt="BQH Certificate" class="certimg" src="assets/BQH_Certificate.jpg"/></div></div></section>
+</section><section id="testimonials"><h2>Testimonials</h2><div class="gallery"><div class="thumb"><img alt="Client feedback screenshot" src="assets/review1.png"/><div class="caption">“Man I really feel better now!”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review2.png"/><div class="caption">"I'm fascinated by this as I feel so good."</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review3.png"/><div class="caption">“I feel better after the session.”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review4.png"/><div class="caption">“I feel so much better... I thought he was the one. But I'm feeling like I could move on now.”</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review5.png"/><div class="caption">"So far my mood is boosted and I did well on my two college exams."</div></div><div class="thumb"><img alt="Client feedback screenshot" src="assets/review6.png"/><div class="caption">“You definitely have a gift.”</div></div></div></section><section id="credentials">
+<h2>Credentials</h2>
+
+<div class="credrow">
+  <div class="certbox">
+    <img class="certimg" src="assets/BQH_Certificate.jpg" alt="BQH Certificate" />
+  </div>
+  <div class="card">
+    <h3>BQH Accreditation</h3>
+    <p class="meta">Beyond Quantum Healing (BQH) — Certificate of Completion</p>
+  </div>
+</div>
+
+<div class="credrow">
+  <div class="certbox certbox--reiki">
+    <img class="certimg" src="assets/Reiki_Certificate.png" alt="Reiki Certificate" />
+  </div>
+  <div class="card">
+    <h3>Reiki Certificate</h3>
+    <p class="meta">While I do not use Reiki as a formal system in my work, I have received Reiki Level I training and attunement.</p>
+  </div>
+</div>
+
+</section>
 <footer>
 <div>
 <strong>Nathan Soufer</strong><br/>
