@@ -37,6 +37,24 @@
   .credrow{ grid-template-columns: 1fr; }
 }
 
+
+/* Mobile: keep each image + caption card feeling like one unit */
+@media (max-width: 900px){
+  .credrow{
+    grid-template-columns: 1fr;
+    gap: 12px;          /* space between image and its card */
+    margin: 18px 0;     /* space between credential pairs */
+  }
+
+  /* kill any extra spacing that might be coming from defaults */
+  .credrow .certbox{ margin: 0; }
+  .credrow .card{ margin: 0; }
+}
+
+@media (max-width: 900px){
+  .credrow{ gap: 8px; margin: 14px 0; }
+}
+
 .credrow .card{ max-width: 560px; }
 
 /* hard cap so it never gets huge on wide screens */
