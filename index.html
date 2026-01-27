@@ -181,6 +181,11 @@
       margin-bottom:14px;
     }
 
+    .creator{
+  font-weight: 800;
+  font-style: normal; /* prevents italics from affecting the word */
+} 
+
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -221,6 +226,7 @@
       background:var(--soft);
     }
     .btn:hover{background:#fff}
+
 
     footer{
       margin-top:72px;
@@ -275,6 +281,14 @@
       box-shadow: var(--shadow);
       background:#fff;
     }
+
+  /* Make the last Services card span both columns for an even layout */
+  #services .grid > .card:last-child{
+    grid-column: 1 / -1;
+    max-width: 760px;
+    justify-self: center;
+  }
+
 </style>
 </head>
 <body>
@@ -325,6 +339,22 @@
 <li>Receive healing</li>
 </ul>
 </div>
+
+<div class="card">
+<h3>Soul Purpose Mentorship (Long-Term)</h3>
+<p class="meta">BQH + shadow work • deprogramming • manifestation alignment • <strong>by application</strong></p>
+<p>
+          A longer-term mentorship combining BQH sessions with ongoing support to clear subconscious blocks, integrate shadow material, heal emotional wounds, and step into a clear, soul-aligned life direction.
+        </p>
+<ul>
+<li>Start with BQH for clarity</li>
+<li>Ongoing integration, shadow work, & healing</li>
+<li>Deprogramming & manifestation techniques</li>
+<li><em>Optional:</em> If you're a <strong class="creator">creator</strong> (or wish to be one), I can also help translate your clarity into a consistent content creation plan that is geared to succeed.</li>
+</ul>
+<a class="btn" href="https://calendly.com/theesotericnomad/soul-purpose-mentorship-fit-call">Apply for Mentorship</a>
+</div>
+
 </div>
 </section>
 <section id="pricing">
