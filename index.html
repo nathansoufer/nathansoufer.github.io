@@ -91,6 +91,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:16px;
+      align-items:stretch; /* ensures equal heights per row */
     }
     @media(max-width:800px){
       .grid{grid-template-columns:1fr}
@@ -102,6 +103,11 @@
       padding:20px;
       background:#fff;
       box-shadow:var(--shadow);
+
+      /* make all cards equal-height + allow buttons to sit at bottom */
+      display:flex;
+      flex-direction:column;
+      height:100%;
     }
 
     .meta{color:var(--muted); font-size:14px}
@@ -140,6 +146,9 @@
       flex-wrap:wrap;
       margin-top:10px;
     }
+
+    /* push CTA area to bottom for consistent alignment */
+    .push{ margin-top:auto; }
 
     footer{
       margin-top:72px;
@@ -238,12 +247,7 @@
       transform-origin: center;
     }
 
-    /* Make the last Services card span both columns for an even layout */
-    #services .grid > .card:last-child{
-      grid-column: 1 / -1;
-      max-width: 760px;
-      justify-self: center;
-    }
+    /* REMOVED: last card spanning both columns */
   </style>
 </head>
 
@@ -288,7 +292,7 @@
             <li>Cut toxic ties holding you back</li>
             <li>Help manifest love &amp; abundance</li>
           </ul>
-          <div class="btnrow">
+          <div class="btnrow push">
             <a class="btn" href="https://calendly.com/theesotericnomad/30min">Book 30 min ($60)</a>
             <a class="btn" href="https://calendly.com/theesotericnomad/1-hour-1-1-meeting">Book 60 min ($99)</a>
           </div>
@@ -305,26 +309,48 @@
             <li>Help understand your soul mission</li>
             <li>Help understand what's blocking you from abundance</li>
           </ul>
-          <a class="btn" href="https://calendly.com/theesotericnomad/beyond-quantum-healing-hypnosis-session">Book BQH Session ($444)</a>
-          <p style="margin-top:10px; color:var(--muted); font-size:14px;">
-            Normally lasts 2-4 hours.
-          </p>
+
+          <div class="push">
+            <div class="btnrow">
+              <a class="btn" href="https://calendly.com/theesotericnomad/beyond-quantum-healing-hypnosis-session">Book BQH Session ($444)</a>
+            </div>
+            <p style="margin-top:10px; color:var(--muted); font-size:14px;">
+              Normally lasts 2-4 hours.
+            </p>
+          </div>
         </div>
 
+        <!-- NEW 3rd CARD -->
         <div class="card">
-          <h3>Soul Purpose Mentorship (Long-Term)</h3>
-          <p class="meta">BQH + shadow work • deprogramming • manifestation alignment • <strong>by application</strong></p>
+          <h3>Psychic Reading</h3>
+          <p class="meta">Direct clarity • Quick answers • Spiritual guidance</p>
           <p>
-            A longer-term mentorship combining Beyond Quantum Healing (BQH) sessions with ongoing support to clear subconscious blocks, integrate shadow material, heal emotional wounds, and step into a clear, soul-aligned life direction. There’s also a <b>content creation</b> option for those who want to <b>build an audience</b> and <b>monetize</b> their mission.
+            A focused psychic divination reading (using the I-Ching) for clear guidance on a situation or decision.
           </p>
           <ul>
-            <li>Start with BQH for clarity</li>
-            <li>Ongoing integration, shadow work, &amp; healing</li>
-            <li>Deprogramming &amp; manifestation techniques</li>
-            <li><em>Optional:</em> If you're a <strong class="creator">creator</strong> (or wish to be one), I can also help translate your clarity into a consistent content creation plan that is geared to succeed.</li>
+            <li>Clarity on relationships, career, or life direction</li>
+            <li>Advice on how to handle your situation</li>
+            <li>Fast, direct answers & guidance</li>
           </ul>
-          <a class="btn" href="https://calendly.com/theesotericnomad/soul-purpose-mentorship-fit-call">Apply for Mentorship</a>
+
+          <div class="btnrow push">
+            <a class="btn" href="https://tally.so/r/A7vz5D">1 Question ($15)</a>
+            <a class="btn" href="https://tally.so/r/ODGagR">3 Questions ($30)</a>
+          </div>
         </div>
+
+        <!-- MENTORSHIP MOVED TO LAST -->
+        <div class="card">
+          <h3>Soul Purpose Mentorship (Long-Term)</h3>
+          <p class="meta">BQH • shadow work • deprogramming • manifestation techniques</p>
+          <p>
+            A longer-term mentorship combining Beyond Quantum Healing (BQH) sessions with ongoing support to clear subconscious blocks, integrate shadow material, heal emotional wounds, and manifest your soul purpose. There’s also a <b>content creation</b> option for those who want to <b>build an audience</b> and <b>monetize</b> their mission.
+          </p>
+          <div class="btnrow push">
+            <a class="btn" href="https://calendly.com/theesotericnomad/soul-purpose-mentorship-fit-call">Apply for Mentorship</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
